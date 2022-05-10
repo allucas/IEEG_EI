@@ -33,20 +33,22 @@ pip install PySimpleGUI
 # Running IEEG_EI
 
 ## Setting Up Output Folder
-Before running, change line 444 in `ei_main_gui.py`:
+Before running, change line `1` in `ei_main_gui.py` to:
 
 ```
-save_ei('OUTPUT_FOLDER',values['-SAVE_NAME-'], ei, list(np.array(dataset.get_channel_labels())[ch_keep]))
+output_folder = 'OUTPUT_FOLDER_PATH'
 ```
 
-Such that `OUTPUT_FOLDER` is the path to the output folder you want to save the calculated EI values to. For example:
+Such that `OUTPUT_FOLDER_PATH` is the path to the output folder you want to save the calculated EI values to. For example:
 
 ```
-save_ei('~/allucas/ei_gui_outputs',values['-SAVE_NAME-'], ei, list(np.array(dataset.get_channel_labels())[ch_keep]))
+output_folder = '~/allucas/ei_gui_outputs'
 ```
+
+Note the lack of a trailing '/' in the above example.
 
 ## Running the GUI
-To run the IEEG_EI GUI simply type:
+To run the IEEG_EI GUI type:
 
 ```
 python ei_main_gui.py
