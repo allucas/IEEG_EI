@@ -1,3 +1,6 @@
+output_folder = '/Users/allucas/Documents/research/CNT/P23_Epileptogenicity_Index/outputs'
+
+##########################
 import PySimpleGUI as sg
 # Note the matplot tk canvas import
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
@@ -441,5 +444,5 @@ while True:
             continue
 
     if event=='-SAVE-':
-        save_ei('/Users/allucas/Documents/research/CNT/P23_Epileptogenicity_Index/outputs',values['-SAVE_NAME-'], ei, list(np.array(dataset.get_channel_labels())[ch_keep]))
+        save_ei(output_folder,values['-SAVE_NAME-'], ei, list(np.array(dataset.get_channel_labels())[ch_keep]))
 _VARS['window'].close()
